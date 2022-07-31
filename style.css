@@ -48,3 +48,28 @@
     border-radius: 5px;
     text-decoration: none;
 }
+
+.incomes {
+    margin: 20px auto 0 auto;
+    width: 70%;
+}
+.income-information {
+    text-align: left;
+    background-color: #3498db;
+    border-top: 3px solid #2ecc71;
+    color: #fff;
+}
+.income-info {
+    margin-right: 20px;
+}
+.value {
+    margin-right: 20px;
+}
+.remove-income-btn {
+    cursor: pointer;
+    color: #fff;
+    transition: .5s;
+}
+.remove-income-btn:hover {
+    color: #e74c3c;
+}
