@@ -86,11 +86,13 @@
             const incomeInfo = document.createElement('span');
             const value = document.createElement('span');
             const removeBtn = document.createElement('span');
+            const removeIcon = document.createElement('i');
         
             incomeInformation.classList.add('income-information');
             incomeInfo.classList.add('income-info')
             value.classList.add('value');
-            removeBtn.classList.add('fa-solid', 'fa-trash', 'remove-income-btn');
+            removeBtn.classList.add('remove-income-btn');
+            removeIcon.classList.add('fa-solid', 'fa-trash')
 
             removeBtn.dataset.id = index;
 
@@ -101,7 +103,9 @@
             incomeInformation.append(incomeInfo);
             incomeInformation.append(value);
             incomeInformation.append(removeBtn);
+            removeBtn.append(removeIcon);
         });
+        removeIncome();
     }
 
     function displayExpense() {
@@ -112,11 +116,13 @@
             const expenseInfo = document.createElement('span');
             const value = document.createElement('span');
             const removeBtn = document.createElement('span');
+            const removeIcon = document.createElement('i');
         
             expenseInformation.classList.add('expense-information');
             expenseInfo.classList.add('expense-info')
             value.classList.add('value');
-            removeBtn.classList.add('fa-solid', 'fa-trash', 'remove-expense-btn');
+            removeBtn.classList.add('remove-expense-btn');
+            removeIcon.classList.add('fa-solid', 'fa-trash');
 
             removeBtn.dataset.id = index;
 
@@ -127,6 +133,29 @@
             expenseInformation.append(expenseInfo);
             expenseInformation.append(value);
             expenseInformation.append(removeBtn);
+            removeBtn.append(removeIcon);
+        });
+        removeExpense();
+    }
+
+    function removeIncome() {
+        const removeIncomeBtn = document.querySelectorAll('.remove-income-btn');
+        removeIncomeBtn.forEach(btn => {
+            btn.addEventListener('click', () => {
+                incomes.splice(btn.dataset.id, 1);
+                clearIncomes();
+                displayIncome();
+            });
+        });
+    }
+    function removeExpense() {
+        const removeExpenseBtn = document.querySelectorAll('.remove-expense-btn');
+        removeExpenseBtn.forEach(btn => {
+            btn.addEventListener('click', () => {
+                expenses.splice(btn.dataset.id, 1);
+                clearExpenses();
+                displayExpense();
+            });
         });
     }
 
@@ -169,8 +198,6 @@
             alert('NO DIVS');
         }
     }
-
-
 
 
     function start() {
