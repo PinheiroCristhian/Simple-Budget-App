@@ -49,17 +49,17 @@
     text-decoration: none;
 }
 
-.incomes {
+.incomes, .expenses {
     margin: 20px auto 0 auto;
     width: 70%;
 }
-.income-information {
+.income-information, .expense-information {
     text-align: left;
     background-color: #3498db;
-    border-top: 3px solid #2ecc71;
+    border-top: 3px solid #dad;
     color: #fff;
 }
-.income-info {
+.income-info, .expense-info {
     margin-right: 20px;
 }
 .value {
