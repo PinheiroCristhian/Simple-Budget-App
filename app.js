@@ -24,6 +24,7 @@
     }
 
 
+
     function checkFieldsEmpty(incomeOrExpense) {
         const source = document.querySelector(`#${incomeOrExpense}-source`);
         const value = document.querySelector(`#${incomeOrExpense}-value`);
@@ -45,6 +46,7 @@
                     const value = document.querySelector(`#${incomeOrExpense}-value`).value;
                     const income = Income(source, value);
                     incomes.push(income);
+                    clearIncomes();
                     display(incomeOrExpense);
                     console.log('It is Baby Income ', incomes);
                 }
@@ -116,6 +118,19 @@
             addIncomesAndExpenses('expense');
         });
     }
+
+    function clearIncomes() {
+        const incomeDiv = document.querySelectorAll('.income-information');
+        if (incomeDiv) {
+            incomeDiv.forEach(eachDiv => {
+                eachDiv.remove();
+            })
+        } else {
+            alert('NO DIVS');
+        }
+    }
+
+
 
 
     function start() {
