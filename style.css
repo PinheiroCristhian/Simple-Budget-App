@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.clearfix::before, .clearfix::after {
+    content: ' ';
+    display: table;
+}
+.clearfix::after {
+   clear: both;
+}
+  
+.container {
+    width: 80%;
+    margin: auto;
+    border: 1px solid #000;
+}
+
+/*=====================================================================================*/
+.incomes-and-expenses {
+    background: linear-gradient(to right, #2ecc71 50%, #e74c3c 50%);
+    height: 90vh;
+}
+.result {
+    background-color: #3498db;
+    height: 10vh;
+}
+.income-section, .expenses-section {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+#income-source, #expense-source {
+    padding: 10px;
+    border-radius: 5px;
+}
+#income-value, #expense-value {
+    padding: 10px;
+    border-radius: 5px;
+}
+.income-div a, .expense-div a {
+    border: 2px solid #000;
+    color: #000;
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+}
