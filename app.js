@@ -205,15 +205,14 @@
     }
 
     function showResult() {
+        const resultDiv = document.querySelector('.result');
         clearResult();
         if (totalExpenses === 0) {
-            alert('You have no Expenses');
-        } else {
+        
+            resultDiv.innerText = `You have no debt`;
 
-            const resultDiv = document.querySelector('.result');
-            const text = document.createElement('p');
-            console.log(typeof totalExpenses)
-            resultDiv.innerText = `Your total expenses are ${Number(totalIncomes) - Number(totalExpenses)}`;
+        } else {
+            resultDiv.innerText = `You have $${Number(totalIncomes) - Number(totalExpenses)} --- And your expenses are ${Number(totalExpenses)}`;
         }
     }
 
