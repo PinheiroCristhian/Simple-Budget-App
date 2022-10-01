@@ -51,7 +51,7 @@
                     totalIncomes += Number(income.getIncomeValue());
                     clearIncomes();
                     displayIncome();
-                    console.log('It is Baby Income ', totalIncomes);
+                    console.log(showResult());
                 }
                 break;
             case 'expense':
@@ -65,7 +65,7 @@
                     totalExpenses += Number(expense.getExpenseValue());
                     clearExpenses();
                     displayExpense();
-                    console.log('It is Baby Expense ', totalExpenses);
+                    console.log(showResult())
                 }
                 break;
 
@@ -196,6 +196,24 @@
             })
         } else {
             alert('NO DIVS');
+        }
+    }
+
+    function clearResult() {
+        const text = document.querySelector('.result p');
+        if (text) text.remove();
+    }
+
+    function showResult() {
+        clearResult();
+        if (totalExpenses === 0) {
+            alert('You have no Expenses');
+        } else {
+
+            const resultDiv = document.querySelector('.result');
+            const text = document.createElement('p');
+            console.log(typeof totalExpenses)
+            resultDiv.innerText = `Your total expenses are ${Number(totalIncomes) - Number(totalExpenses)}`;
         }
     }
 
